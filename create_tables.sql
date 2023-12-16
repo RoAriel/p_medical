@@ -6,8 +6,8 @@ USE p_medical;
 
 CREATE TABLE plan(
 id INT AUTO_INCREMENT
-, name VARCHAR(15) NOT NULL
-, description ENUM ('B1','B2','EM')
+, name ENUM ('B1','B2','EM') NOT NULL
+, description  LONGTEXT
 , PRIMARY KEY(`id`)
 );
 
