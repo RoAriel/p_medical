@@ -16,10 +16,11 @@ id INT AUTO_INCREMENT
 , dni INT NOT NULL  
 , f_name VARCHAR(25) NOT NULL
 , l_name VARCHAR(25) NOT NULL
+, sex ENUM ('M','F') NOT NULL
 , plan_id INT
 , address VARCHAR(30) NOT NULL
 , phone VARCHAR(25) NOT NULL
-, email VARCHAR(25)
+, email VARCHAR(50)
 , PRIMARY KEY(`id`)
 , FOREIGN KEY(`id`) REFERENCES `plan` (`id`)
 );
@@ -34,7 +35,6 @@ id INT AUTO_INCREMENT
 
 CREATE TABLE medical_speciality(
 id INT AUTO_INCREMENT
-, doctor_id INT NOT NULL
 , speciality VARCHAR(30) NOT NULL
 , PRIMARY KEY(`id`)
 );
