@@ -43,14 +43,14 @@ INSERT INTO DOCTOR (id, f_name,  l_name, speciality_id) VALUES (7,'Mariana','Uri
 INSERT INTO DOCTOR (id, f_name,  l_name, speciality_id) VALUES (8,'Olatz','Vazquez',8);
 
 INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (1,'Consultorio La Esmeralda', 'Zona Oeste', 'Ctra. de Fuentenueva 9','1529231373');
-INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (2,'Consultorio Villa Espania', 'Quilmes', 'Fuente del Gallo 68','1557340592');
-INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (3,'Consultorio Loreto', 'Dorrego', 'C/ Andalucia 62','1518569446');
-INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (4,'Consultorio San Isidro', 'San Isidro', 'Puerto Lugar 24','1588804546');
-INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (5,'Consultorio Monaco', 'Valle', 'Bellavista 12','1539131925');
+INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (2,'Consultorio Villa Espania', 'Zona Sur', 'Fuente del Gallo 68','1557340592');
+INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (3,'Consultorio Loreto', 'Zona Norte', 'C/ Andalucia 62','1518569446');
+INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (4,'Consultorio San Isidro', 'Zona Norte', 'Puerto Lugar 24','1588804546');
+INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (5,'Consultorio Monaco', 'Zona Oeste', 'Bellavista 12','1539131925');
 INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (6,'Consultorio Manarata', 'Zona Sur', 'Cercas Bajas 76','1589371878');
-INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (7,'Consultorio Cruz de Plata', 'Budapest', 'Padre Caro 45','1506072502');
-INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (8,'Consultorio La Madrid', 'Quilmes', 'Avda. Alameda Sundheim 86','1542400884');
-INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (9,'Consultorio Quilmes', 'Quilmes', 'Ctra. de la Puerta 66','1559777876');
+INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (7,'Consultorio Cruz de Plata', 'Zona Norte', 'Padre Caro 45','1506072502');
+INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (8,'Consultorio La Madrid', 'Zona Sur', 'Avda. Alameda Sundheim 86','1542400884');
+INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (9,'Consultorio Zona Sur', 'Zona Sur', 'Ctra. de la Puerta 66','1559777876');
 INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (10,'Clinica Mother', 'Zona Sur', 'Atamaria 11','1560002788');
 INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (11,'Clinica Nilo', 'Zona Sur', 'Prolongacion San Sebastian 96','1540796611');
 INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (12,'Clinica Del Renacimiento', 'Zona Este', 'Av. Zumalakarregi 37','1590132216');
