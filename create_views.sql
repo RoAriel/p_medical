@@ -14,7 +14,7 @@ inner join medical_speciality ms
 on ms.id = d.speciality_id
 inner join branch b
 on s.branch_id = b.id
-)
+);
 
 CREATE OR REPLACE VIEW VW_northern_zone_branches AS
 (select * from branch where lower(location) = 'zona norte');
