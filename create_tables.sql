@@ -67,24 +67,25 @@ id INT AUTO_INCREMENT NOT NULL
 , FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`id`)
 );
 
+CREATE TABLE relation_speciality_branch(
+id INT AUTO_INCREMENT NOT NULL
+,speciality_id INT NOT NULL
+, branch_id INT NOT NULL
+, PRIMARY KEY (`id`)
+, FOREIGN KEY (`speciality_id`) REFERENCES `medical_speciality` (`id`)
+, FOREIGN KEY (`branch_id`) REFERENCES `branch` (`id`)
+);
+
 CREATE TABLE shift(
 id INT AUTO_INCREMENT
 , partner_id INT NOT NULL
 , speciality_rel_id INT NOT NULL
-, branch_id INT NOT NULL
+, relation_speciality_branch_id INT NOT NULL
 , date_s DATE NOT NULL
 , time_s TIME NOT NULL
 , PRIMARY KEY(`id`)
 , FOREIGN KEY(`partner_id`) REFERENCES `partner` (`id`)
 , FOREIGN KEY(`speciality_rel_id`) REFERENCES `relation_speciality_doc` (`id`)
-, FOREIGN KEY(`branch_id`) REFERENCES `branch` (`id`)
-);
-
-CREATE TABLE relation_speciality_branch(
-speciality_id INT NOT NULL
-, branch_id INT NOT NULL
-, PRIMARY KEY (`speciality_id`,`branch_id`)
-, FOREIGN KEY (`speciality_id`) REFERENCES `medical_speciality` (`id`)
-, FOREIGN KEY (`branch_id`) REFERENCES `branch` (`id`)
+, FOREIGN KEY(`relation_speciality_branch_id`) REFERENCES `relation_speciality_branch` (`id`)
 );
 
