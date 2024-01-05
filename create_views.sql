@@ -1,19 +1,29 @@
 use p_medical;
 
 CREATE OR REPLACE VIEW vw_shift_detail as (
-select p.f_name as p_name, p.l_name as p_last_name, 
-d.f_name as doctor_name, d.l_name as doctor_last_name, 
-ms.speciality as spec_name, b.name as branch, b.location as branch_location,
-s.date_s as date_shift, s.time_s as time_shift
+SELECT p.f_name as Partner_name, p.l_name as Partner_Lastname, 
+ms.speciality, doc.f_name as Doc_name, doc.l_name as Doc_Lastname, 
+br.location, br.address
+date_s,time_s
 from shift s
-inner join partner p
+
+inner join p_medical.partner p
 on s.partner_id = p.id
-inner join doctor d
-on s.doctor_id = d.id
-inner join medical_speciality ms
-on ms.id = d.speciality_id
-inner join branch b
-on s.branch_id = b.id
+
+inner join p_medical.relation_speciality_doc sd
+on s.speciality_rel_id = sd.id
+
+inner join p_medical.medical_speciality ms
+on ms.id = sd.speciality_id
+
+inner join p_medical.doctor doc
+on sd.doctor_id = doc.id 
+
+inner join p_medical.relation_speciality_branch sb
+on s.relation_speciality_branch_id = sb.id
+
+inner join p_medical.branch br
+on br.id = sb.branch_id
 );
 
 CREATE OR REPLACE VIEW VW_northern_zone_branches AS
@@ -34,12 +44,20 @@ from partner
 GROUP BY 1);
 
 CREATE OR REPLACE VIEW vw_number_of_shifts_per_specialty AS (
-select spec_name, count(*)
+select speciality, count(*)
 from vw_shift_detail
 GROUP BY 1);
 
 CREATE OR REPLACE VIEW vw_list_of_partner_per_doctor AS (
-select doctor_name, doctor_last_name, spec_name, p_name, p_last_name
+select doc_name, doc_lastname, speciality, partner_name, partner_lastname
 from vw_shift_detail
 ORDER BY 1);
 
+CREATE OR REPLACE VIEW vw_speciality_per_branch AS (
+select ms.speciality, br.location, br.address, br.phone
+from relation_speciality_branch sb
+inner join branch br
+on sb.branch_id = br.id
+inner join medical_speciality ms
+on ms.id = sb.speciality_id
+order by 1);
