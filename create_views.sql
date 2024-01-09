@@ -3,8 +3,12 @@ use p_medical;
 CREATE OR REPLACE VIEW vw_shift_detail as (
 SELECT p.f_name as Partner_name, p.l_name as Partner_Lastname, 
 ms.speciality, doc.f_name as Doc_name, doc.l_name as Doc_Lastname, 
-br.location, br.address
-date_s,time_s
+br.location, br.address,
+date_s,time_s, 
+case 
+when is_confirm = true then 'Confirmado'
+else 'Sin Confirmar' end
+as 'confirmado?' 
 from shift s
 
 inner join p_medical.partner p

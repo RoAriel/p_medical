@@ -20,10 +20,6 @@ INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  
 INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (14,26595549, 'Amparo','Santana','1995-09-17','F',2,'Avda. Enrique Peinador 75','1586888030','amparo_santana@gmail.com');
 INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (15,29235535, 'Xabier','Baeza','2000-12-08','M',2,'Pl. Virgen Blanca 67','1558274483','xabier_baeza@gmail.com');
 
-INSERT INTO medical_history (id, partner_id, speciality_id, md_history) VALUES (1, 1,4,'n/a');
-INSERT INTO medical_history (id, partner_id, speciality_id, md_history) VALUES (2, 2,10,'n/a');
-INSERT INTO medical_history (id, partner_id, speciality_id, md_history) VALUES (3, 3,7,'n/a');
-
 INSERT INTO medical_speciality values (1, 'Clinico');
 INSERT INTO medical_speciality values (2, 'Ginecologo');
 INSERT INTO medical_speciality values (3, 'Cardiologo');
@@ -39,6 +35,10 @@ INSERT INTO medical_speciality values (12,'Remautologia');
 INSERT INTO medical_speciality values (13,'Neurologia');
 INSERT INTO medical_speciality values (14,'Cirujano');
 INSERT INTO medical_speciality values (15,'Obstetra');
+
+INSERT INTO medical_history (id, partner_id, speciality_id, md_history) VALUES (1, 1,4,'n/a');
+INSERT INTO medical_history (id, partner_id, speciality_id, md_history) VALUES (2, 2,10,'n/a');
+INSERT INTO medical_history (id, partner_id, speciality_id, md_history) VALUES (3, 3,7,'n/a');
 
 INSERT INTO DOCTOR (id, f_name,  l_name) VALUES (1,'Josue','Rico');
 INSERT INTO DOCTOR (id, f_name,  l_name) VALUES (2,'Eduardo','Santos');
@@ -77,11 +77,12 @@ INSERT INTO relation_speciality_doc (id,speciality_id, doctor_id) VALUES (7,7,7)
 INSERT INTO relation_speciality_doc (id,speciality_id, doctor_id) VALUES (8,8,8);
 INSERT INTO relation_speciality_doc (id,speciality_id, doctor_id) VALUES (9,9,9);
 INSERT INTO relation_speciality_doc (id,speciality_id, doctor_id) VALUES (10,10,10);
-INSERT INTO relation_speciality_doc (id,speciality_id, doctor_id) VALUES (11,3,13);
+INSERT INTO relation_speciality_doc (id,speciality_id, doctor_id) VALUES (11,3,3);
 INSERT INTO relation_speciality_doc (id,speciality_id, doctor_id) VALUES (12,8,1);
 INSERT INTO relation_speciality_doc (id,speciality_id, doctor_id) VALUES (13,9,3);
-INSERT INTO relation_speciality_doc (id,speciality_id, doctor_id) VALUES (14,2,15);
-INSERT INTO relation_speciality_doc (id,speciality_id, doctor_id) VALUES (15,1,14);
+INSERT INTO relation_speciality_doc (id,speciality_id, doctor_id) VALUES (14,15,5);
+INSERT INTO relation_speciality_doc (id,speciality_id, doctor_id) VALUES (15,14,4);
+INSERT INTO relation_speciality_doc (id,speciality_id, doctor_id) VALUES (16,14,4);
 
 INSERT INTO relation_speciality_branch (id, speciality_id,branch_id) VALUES (1,1,1);
 INSERT INTO relation_speciality_branch (id, speciality_id,branch_id) VALUES (2,2,2);
@@ -98,13 +99,15 @@ INSERT INTO relation_speciality_branch (id, speciality_id,branch_id) VALUES (12,
 INSERT INTO relation_speciality_branch (id, speciality_id,branch_id) VALUES (13,2,13);
 INSERT INTO relation_speciality_branch (id, speciality_id,branch_id) VALUES (14,1,14);
 INSERT INTO relation_speciality_branch (id, speciality_id,branch_id) VALUES (15,7,15);
+INSERT INTO relation_speciality_branch (id, speciality_id,branch_id) VALUES (16,13,5);
 
-INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s) VALUES (1, 3, 1, 1, '2024-01-10', '09:00:00');
-INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s) VALUES (2, 1, 2, 5, '2024-01-21', '16:30:00');
-INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s) VALUES (3, 2, 3, 7, '2024-01-15', '12:40:00');
-INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s) VALUES (4, 12, 4, 1, '2024-01-11', '09:00:00');
-INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s) VALUES (5, 7, 5, 5, '2024-01-15', '16:30:00');
-INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s) VALUES (6, 4, 6, 7, '2024-01-15', '12:40:00');
-INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s) VALUES (7, 5, 7, 1, '2024-01-10', '09:00:00');
-INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s) VALUES (8, 3, 8, 5, '2024-01-21', '16:30:00');
-INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s) VALUES (9, 2, 15, 7, '2024-01-15', '12:40:00');
+INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s, is_confirm) VALUES (1, 3, 1, 1, '2024-01-10', '09:00:00', true);
+INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s, is_confirm) VALUES (2, 1, 2, 5, '2024-01-21', '16:30:00', true);
+INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s, is_confirm) VALUES (10, 1, 16, 5, '2024-01-21', '18:30:00', false);
+INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s, is_confirm) VALUES (3, 2, 3, 7, '2024-01-15', '12:40:00', true);
+INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s, is_confirm) VALUES (4, 12, 4, 1, '2024-01-11', '09:00:00',false);
+INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s, is_confirm) VALUES (5, 7, 5, 5, '2024-01-15', '16:30:00',true);
+INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s, is_confirm) VALUES (6, 4, 6, 7, '2024-01-15', '12:40:00',true);
+INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s, is_confirm) VALUES (7, 5, 7, 1, '2024-01-10', '09:00:00',true);
+INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s, is_confirm) VALUES (8, 3, 8, 5, '2024-01-21', '16:30:00',true);
+INSERT INTO SHIFT (id ,partner_id, speciality_rel_id , relation_speciality_branch_id ,date_s, time_s, is_confirm) VALUES (9, 2, 15, 7, '2024-01-15', '12:40:00',false);

@@ -83,6 +83,7 @@ id INT AUTO_INCREMENT
 , relation_speciality_branch_id INT NOT NULL
 , date_s DATE NOT NULL
 , time_s TIME NOT NULL
+, is_confirm BOOLEAN NOT NULL DEFAULT FALSE
 , PRIMARY KEY(`id`)
 , FOREIGN KEY(`partner_id`) REFERENCES `partner` (`id`)
 , FOREIGN KEY(`speciality_rel_id`) REFERENCES `relation_speciality_doc` (`id`)
