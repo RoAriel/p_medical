@@ -34,14 +34,14 @@
 - vw_west_zone_branches: Sucursales en Zona Este.
 
 
-# [FUNCIONES](https://github.com/RoAriel/p_medical/blob/main/functions.sql)
+# [FUNCIONES](https://github.com/RoAriel/p_medical/blob/main/create_functions.sql)
 - fn_getAge: Función para calcular edad de socios.
 
 
 - fn_getCant_shift_confirm: Obtiene la cantidad de turnos confirmados.
 
 
-# [PROCEDURE](https://github.com/RoAriel/p_medical/blob/main/stored_procedures.sql)
+# [PROCEDURE](https://github.com/RoAriel/p_medical/blob/main/create_stored_procedures.sql)
 - sp_add_or_del_medSpeciality: Agregar o eliminar especialidad médica.
 
 
