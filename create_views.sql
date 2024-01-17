@@ -42,7 +42,7 @@ CREATE OR REPLACE VIEW VW_south_zone_branches AS
 CREATE OR REPLACE VIEW VW_west_zone_branches AS
 (select * from branch where lower(location) = 'zona oeste');
 
-CREATE OR REPLACE VIEW vw_amount_per_gender AS (
+CREATE OR REPLACE VIEW vw_amount_per_sex AS (
 SELECT sex, count(*)as catidad
 from partner
 GROUP BY 1);
@@ -56,15 +56,6 @@ CREATE OR REPLACE VIEW vw_list_of_partner_per_doctor AS (
 select doc_name, doc_lastname, speciality, partner_name, partner_lastname
 from vw_shift_detail
 ORDER BY 1);
-
-CREATE OR REPLACE VIEW vw_speciality_per_branch AS (
-select ms.speciality, br.location, br.address, br.phone
-from relation_speciality_branch sb
-inner join branch br
-on sb.branch_id = br.id
-inner join medical_speciality ms
-on ms.id = sb.speciality_id
-order by 1);
 
 CREATE OR REPLACE VIEW vw_medical_history AS (
 Select 
@@ -93,7 +84,7 @@ on sp.speciality_id = ms.id
 
 CREATE OR REPLACE VIEW vw_rel_speciality_branch AS (
 Select 
-speciality, b.name, b.location, b.address
+speciality, b.name, b.location, b.address, b.phone
 
 from relation_speciality_branch sb
 
