@@ -2,7 +2,7 @@
 - P_MEDICAL:  Esquema que contiene el modelo de agenda médica.
 
 
-# TABLAS
+# [TABLAS](https://github.com/RoAriel/p_medical/blob/main/create_tables.sql)
 - branch: Tabla de Sucursales.
 
 
@@ -18,7 +18,7 @@
 - shift_audit_logs: Logs de Auditoría.
 
 
-# VISTAS
+# [VISTAS](https://github.com/RoAriel/p_medical/blob/main/create_views.sql)
 - vw_amount_per_gender: Cantidad de socios por sexo.
 
 
@@ -34,21 +34,21 @@
 - vw_west_zone_branches: Sucursales en Zona Este.
 
 
-# FUNCIONES
+# [FUNCIONES](https://github.com/RoAriel/p_medical/blob/main/functions.sql)
 - fn_getAge: Función para calcular edad de socios.
 
 
 - fn_getCant_shift_confirm: Obtiene la cantidad de turnos confirmados.
 
 
-# PROCEDURE
+# [PROCEDURE](https://github.com/RoAriel/p_medical/blob/main/stored_procedures.sql)
 - sp_add_or_del_medSpeciality: Agregar o eliminar especialidad médica.
 
 
 - sp_orderBy: Ordena una tabla según el campo y criterio elegido.
 
 
-# TRIGGERS
+# [TRIGGERS](https://github.com/RoAriel/p_medical/blob/main/create_triggers.sql)
 - TRG_partner_audit_logs_ins: Dispara logs de Insert en PARTNER.
 
 
