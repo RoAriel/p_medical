@@ -17,6 +17,7 @@ id INT AUTO_INCREMENT NOT NULL
 , f_name VARCHAR(25) NOT NULL
 , l_name VARCHAR(25) NOT NULL
 , date_of_birth DATE NOT NULL
+, age INT NOT NULL
 , sex ENUM ('M','F') NOT NULL
 , plan_id INT NOT NULL
 , address VARCHAR(30) NOT NULL

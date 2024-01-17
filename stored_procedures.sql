@@ -34,5 +34,5 @@ begin
 end //
 DELIMITER ;
 
-call sp_add_or_del_medSpeciality('INS',0,'Oncologo');
+call sp_add_or_del_medSpeciality('INS',null,'Oncologo');
 call sp_add_or_del_medSpeciality('DEL',16,''); -- en este ejemplo el 16 es el que se agrega en la linea de arriba

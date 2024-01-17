@@ -65,3 +65,41 @@ on sb.branch_id = br.id
 inner join medical_speciality ms
 on ms.id = sb.speciality_id
 order by 1);
+
+CREATE OR REPLACE VIEW vw_medical_history AS (
+Select 
+f_name, l_name , speciality , md_history
+from medical_history h
+inner join partner p
+on p.id = h.partner_id
+
+inner join medical_speciality ms
+on ms.id = h.speciality_id
+);
+
+
+CREATE OR REPLACE VIEW vw_rel_speciality_doc AS (
+Select 
+concat(f_name,' ', l_name) as doc_name , speciality
+
+from relation_speciality_doc sp
+
+inner join doctor d
+on d.id = sp.doctor_id
+
+inner join medical_speciality ms
+on sp.speciality_id = ms.id
+);
+
+CREATE OR REPLACE VIEW vw_rel_speciality_branch AS (
+Select 
+speciality, b.name, b.location, b.address
+
+from relation_speciality_branch sb
+
+inner join branch b
+on b.id = sb.branch_id
+
+inner join medical_speciality ms
+on sb.speciality_id = ms.id
+);
