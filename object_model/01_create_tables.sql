@@ -4,6 +4,7 @@ CREATE SCHEMA IF NOT  EXISTS p_medical;
 
 USE p_medical;
 
+DROP TABLE IF EXISTS plan;
 CREATE TABLE plan(
 id INT AUTO_INCREMENT NOT NULL
 , name ENUM ('B1','B2','EM') NOT NULL
@@ -11,6 +12,7 @@ id INT AUTO_INCREMENT NOT NULL
 , PRIMARY KEY(`id`)
 );
 
+DROP TABLE IF EXISTS partner;
 CREATE TABLE partner(
 id INT AUTO_INCREMENT NOT NULL
 , dni INT NOT NULL  
@@ -27,12 +29,14 @@ id INT AUTO_INCREMENT NOT NULL
 , FOREIGN KEY(`plan_id`) REFERENCES `plan` (`id`)
 );
 
+DROP TABLE IF EXISTS medical_speciality;
 CREATE TABLE medical_speciality(
 id INT AUTO_INCREMENT NOT NULL
 , speciality VARCHAR(30) NOT NULL
 , PRIMARY KEY(`id`)
 );
 
+DROP TABLE IF EXISTS medical_history;
 CREATE TABLE medical_history(
 id INT AUTO_INCREMENT NOT NULL
 , partner_id INT NOT NULL
@@ -43,6 +47,7 @@ id INT AUTO_INCREMENT NOT NULL
 , FOREIGN KEY(`speciality_id`) REFERENCES `medical_speciality` (`id`)
 );
 
+DROP TABLE IF EXISTS doctor;
 CREATE TABLE doctor(
 id INT AUTO_INCREMENT NOT NULL
 , f_name VARCHAR(25) NOT NULL
@@ -50,6 +55,7 @@ id INT AUTO_INCREMENT NOT NULL
 , PRIMARY KEY(`id`)
 );
 
+DROP TABLE IF EXISTS branch;
 CREATE TABLE branch(
 id INT AUTO_INCREMENT
 , name VARCHAR(25) NOT NULL
@@ -59,6 +65,7 @@ id INT AUTO_INCREMENT
 , PRIMARY KEY(`id`)
 );
 
+DROP TABLE IF EXISTS relation_speciality_doc;
 CREATE TABLE relation_speciality_doc(
 id INT AUTO_INCREMENT NOT NULL
 , speciality_id INT NOT NULL
@@ -68,6 +75,7 @@ id INT AUTO_INCREMENT NOT NULL
 , FOREIGN KEY (`doctor_id`) REFERENCES `doctor` (`id`)
 );
 
+DROP TABLE IF EXISTS relation_speciality_branch;
 CREATE TABLE relation_speciality_branch(
 id INT AUTO_INCREMENT NOT NULL
 ,speciality_id INT NOT NULL
@@ -77,6 +85,7 @@ id INT AUTO_INCREMENT NOT NULL
 , FOREIGN KEY (`branch_id`) REFERENCES `branch` (`id`)
 );
 
+DROP TABLE IF EXISTS shift;
 CREATE TABLE shift(
 id INT AUTO_INCREMENT
 , partner_id INT NOT NULL
