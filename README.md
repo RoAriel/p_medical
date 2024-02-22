@@ -1,11 +1,11 @@
-# MIS_MEDICAL
+# P_MEDICAL
 Proyecto final para el curso de [CODERHOUSE - SQL](https://www.coderhouse.com/online/sql)
 ## Descripción del Proyecto
 Este proyecto representa el sistema de asignación de turnos en una agenda médica de una prepaga, donde se podra  crear, ver turnos y datos de las sucursales en las cuales se podran gacer atender los socios de esta prepaga.
 
 
 ## DER (Diagrama entidad-relación)
-![DER de MIS_MEDICAL]()
+![DER de P_MEDICAL](https://github.com/RoAriel/p_medical/blob/main/DER.png)
 ## Tablas
 Las tablas que componen este modo son las siguientes:
 
