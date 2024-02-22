@@ -1,82 +1,137 @@
 # MIS_MEDICAL
 Proyecto final para el curso de [CODERHOUSE - SQL](https://www.coderhouse.com/online/sql)
-## Descripción del Modelo
-Este modelo representa el sistema de asignación de turnos en una agenda médica de una prepaga.
+## Descripción del Proyecto
+Este proyecto representa el sistema de asignación de turnos en una agenda médica de una prepaga, donde se podra  crear, ver turnos y datos de las sucursales en las cuales se podran gacer atender los socios de esta prepaga.
 
 
 ## DER (Diagrama entidad-relación)
 ![DER de MIS_MEDICAL]()
-### Schema
-El schema donde se aloja el modelo será el p_medical
+## Tablas
+Las tablas que componen este modo son las siguientes:
 
+|        Tabla                |          Descripción                      
+|-----------------------------|-------------------------------------------|
+|`Partner`                    |Socios (afiliados) de la prepaga           |
+|`Doctor`                     |Doctores de la prepaga                     |
+|`Branch`                     |Sucursales                                 |
+|`Shift`                      |Turnos médicos                             |
+|`Plan`                       |Planes que ofrece la prepaga               |
+|`Medical_history`            |Historial médico del socio                 |
+|`Medical_speciality`         |Especialidades médicas de la prepaga       |
+|`Relation_speciality_doc`    |Relaciona al doctor con una especialidad   |
+|`Relation_speciality_branch` |Relacion de sucursales con especialidades  |
+|`Partner_audit_logs`         |Tabla para auditar la informacion de socios|
+|`Shift_audit_logs`           |Tabla para auditar la informacion de turnos|
 
+### `Partner`    
+|Campo | Detalle | Tipo
+ |---|--|--
+| id | Identificador unico dentro del sistema |numerico
+| dni |Documento de inedntidad del socio|numerico
+| f_name| Primer nombre| texto
+| l_name | Apellido |texto
+| date_of_birth | Fecha de Nacimiento |fecha
+| age |edad | numerico
+| sex |Sexo |Enumerado (solo se pude tener valores previamente definidos)
+| plan_id | Identificador del plan que tiene| numerico
+| address |Direccion | texto
+| phone |Telefono de contacto|texto
+| email |E-mail de contacto|texto
 
+### `Doctor`     
+|Campo | Detalle | Tipo
+ |---|--|--
+| id | Identificador unico dentro del sistema |numerico
+| dni |Documento de inedntidad del socio|numerico
+| matricula | Numro de matricula de doctor | texto
+| f_name| Primer nombre| texto
+| l_name | Apellido |texto
+| date_of_birth | Fecha de Nacimiento |fecha
+| age |edad | numerico
+| sex |Sexo |Enumerado (solo se pude tener valores previamente definiodos)
+| phone |Telefono de contacto|texto
+| email |E-mail de contacto|texto   
 
-|        Tabla        |          Descripción                      
-|---------------------|------------------------------------|
-|`Partner`            |Socios (afiliados) de la prepaga    |
-|`Doctor`             |Doctores de la prepaga              |
-|`Branch`             |Sucursales                          |
-|`Shift`              |Turnos médicos                      |
-|`Plan`               |Planes que ofrece la prepaga        |
-|`Medical_history`    | Historial médico del socio         |
-|`Medical_speciality` |Especialidades médicas de la prepaga|
+### `Branch`   
+|Campo | Detalle | Tipo
+ |---|--|--
+| id | Identificador unico dentro del sistema |numerico
+|name | Nombre de la sucursal| texto
+|location | Localidad | texto
+| address |Direccion | texto
+| phone |Telefono de contacto|texto
 
+### `Shift` 
+|Campo | Detalle | Tipo
+ |---|--|--
+| id | Identificador unico dentro del sistema |numerico
+|partner_id | Identificador unico del socio | numerico
+|speciality_rel_id | Identificador unico de la relacion especialidad medico | numerico
+|relation_speciality_branch_id | Identificador unico de la relacion especialidad sucursal | numerico
+|date_s | Fecha del turno  | Fecha
+|time_s | Hora del turno | Horario
+|is_confirm | Marca si el turno esta confirmado | Verdadero o Falso
 
-# SCHEMA
-- P_MEDICAL:  Esquema que contiene el modelo de agenda médica.
+### `Plan`      
+|Campo | Detalle | Tipo
+ |---|--|--
+| id | Identificador unico dentro del sistema |numerico
+|name | Nombre del plan| Enumerado (solo se pude tener valores previamente definiodos)
+|description |  Descripcion del plan | texto
 
+### `Medical_history`        
+|Campo | Detalle | Tipo
+ |---|--|--  
+| id | Identificador unico dentro del sistema |numerico
+|partner_id | Identificador unico del socio | numerico
+| speciality_id | Id de la especialidad | numerico
+| md_history | Historial | texto
+ 
+### `Medical_speciality`
+|Campo | Detalle | Tipo
+ |---|--|--
+| id | Identificador unico dentro del sistema |numerico
+, speciality VARCHAR(30) NOT NULL 
 
-# [TABLAS](https://github.com/RoAriel/p_medical/blob/main/create_tables.sql)
-- branch: Tabla de Sucursales.
+### `Relation_speciality_doc`  
+|Campo | Detalle | Tipo
+ |---|--|-- 
+| id | Identificador unico dentro del sistema |numerico
+| speciality_id | Id de la especialidad | numerico
+| doctor_id| Identificador unico del doctor | numerico
 
+### `Relation_speciality_branch`
+|Campo | Detalle | Tipo
+ |---|--|--
+| id | Identificador unico dentro del sistema |numerico
+| speciality_id | Identificador unico de la especialidad | numerico
+| branch_id | Identificador unico de la sucursal| numerico
 
-- doctor: Tabla de doctores.
-- medical_history: Historial médico del socio.
-- medical_speciality: Especialidades médicas.
-- partner: Socios.
-- partner_audit_logs: Logs de Auditoría
-- plan: Planes.
-- relation_speciality_branch: Relación Especialidades por Sucursales.
-- relation_speciality_doc: Relacion Especialidades y sus doctores.
-- shift: Turnos.
-- shift_audit_logs: Logs de Auditoría.
+### `Partner_audit_logs`  
+|Campo | Detalle | Tipo
+ |---|--|--
+| id_log | Identificador unico dentro del sistema |numerico
+| id_user | Identificador unico del usuario dentro del sistema |numerico
+| changes | Descripcion del cambio | texto
+| date_UPD_INS_DEL| Fecha del cambio |Fecha
+| acction_UPD_INS_DEL| Tipo del cambio |texto
 
+### `Shift_audit_logs`    
+|Campo | Detalle | Tipo
+ |---|--|--
+| id_log | Identificador unico dentro del sistema |numerico
+| id_shift| Identificador unico del turno dentro del sistema |numerico
+| changes | Descripcion del cambio | texto
+| user_mod | Identificador unico del usuario dentro del sistema |numerico
+| date_UPD_INS_DEL| Fecha del cambio |Fecha
+| acction_UPD_INS_DEL| Tipo del cambio |texto
 
-# [VISTAS](https://github.com/RoAriel/p_medical/blob/main/create_views.sql)
-- vw_amount_per_gender: Cantidad de socios por sexo.
+## VISTAS
+Las vistas son objetos dentro de nuesta base de datos que nos brindan informacion de manera mas especifica de las tablas ya que son construidas para resolver necesidades especificas y a su vez nos permiten visualizar la informacion de una manera mas clara.
 
-
-- vw_eastern_zone_branches: Sucursales en Zona Oeste.
 - vw_list_of_partner_per_doctor: Lista socios por doctor.
 - vw_medical_history: Historial médico de cada socio.
-- vw_northern_zone_branches: Sucursales en Zona Norte.
 - vw_number_of_shifts_per_specialty: Cantidad de turnos por especialidad.
 - vw_rel_speciality_branch: Especialidades por sucursal.
 - vw_rel_speciality_doc: Especialidades por doctor.
 - vw_shift_detail: Detalles de turnos.
-- vw_south_zone_branches: Sucursales en Zona Sur.
-- vw_west_zone_branches: Sucursales en Zona Este.
-
-
-# [FUNCIONES](https://github.com/RoAriel/p_medical/blob/main/create_functions.sql)
-- fn_getAge: Función para calcular edad de socios.
-
-
-- fn_getCant_shift_confirm: Obtiene la cantidad de turnos confirmados.
-
-
-# [PROCEDURE](https://github.com/RoAriel/p_medical/blob/main/create_stored_procedures.sql)
-- sp_add_or_del_medSpeciality: Agregar o eliminar especialidad médica.
-
-
-- sp_orderBy: Ordena una tabla según el campo y criterio elegido.
-
-
-# [TRIGGERS](https://github.com/RoAriel/p_medical/blob/main/create_triggers.sql)
-- TRG_partner_audit_logs_ins: Dispara logs de Insert en PARTNER.
-
-
-- TRG_partner_audit_logs_upd: Dispara logs de UPDATE en PARTNER.
-- TRG_shift_audit_logs_ins: Dispara logs de Insert en SHIFT.
-- TRG_shift_audit_logs_upd: Dispara logs de UPDATE en SHIFT.
