@@ -1,4 +1,4 @@
-# TO DO LIST
+# Installation Guide
 Todos los scripts.sql necesarios para crear el modelo son los que se encuentra dentro de la carpeta `p_medical\object_model\` y son enumerados a continuacion.
 
 1. Ejecutar dentro de MySql el script `01_create_tables.sql` para generar el Schema y las tablas del modelo.

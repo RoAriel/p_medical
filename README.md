@@ -140,4 +140,4 @@ Las vistas son objetos dentro de nuesta base de datos que nos brindan informacio
 
 Para poder utilizar el modelo favor de seguir los pasos detallados [installation guide][guia].
 
-[guia]: https://github.com/RoAriel/p_medical/blob/main/installation%20guide.md
+[guia]: https://github.com/RoAriel/p_medical/blob/main/installation_guide.md
