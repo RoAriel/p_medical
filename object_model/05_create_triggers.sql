@@ -36,7 +36,7 @@ VALUES (OLD.id, concat('Update el PLAN_ID: ',OLD.plan_id,' ','con el PLAN_ID: ',
 END//
 DELIMITER ;
 
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (20,22739776, 'Micaela','Haro','1975-10-17','M',3,'Rio Negro 5','1577319025','micaela_haro@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  age, sex,  plan_id,  address,  phone,  email) VALUES (20,22739776, 'Micaela','Haro','1975-10-17',fn_getAge('1975-10-17'),'M',3,'Rio Negro 5','1577319025','micaela_haro@gmail.com');
 UPDATE PARTNER set plan_id = 3 where id = 20;
 
 select * from partner_audit_logs;

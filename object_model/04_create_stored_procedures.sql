@@ -1,6 +1,6 @@
  USE P_MEDICAL;
  
- DROP PROCEDURE sp_order_partner_by;
+ DROP PROCEDURE IF EXISTS sp_order_partner_by;
  DELIMITER //
  create procedure sp_order_partner_by (in p_column varchar(30), in p_order varchar(4))
 begin
@@ -20,7 +20,7 @@ DELIMITER ;
 call sp_order_partner_by('f_name', 'DESC');
 call sp_order_partner_by('f_name', 'ASC');
 
- DROP PROCEDURE sp_add_or_del_medSpeciality;
+ DROP PROCEDURE IF EXISTS sp_add_or_del_medSpeciality;
  DELIMITER //
  create procedure sp_add_or_del_medSpeciality (in p_opcion char(3), in p_id_speciality int, in p_speciality varchar(30))
 begin
@@ -34,5 +34,5 @@ begin
 end //
 DELIMITER ;
 
-call sp_add_or_del_medSpeciality('INS',null,'Oncologo');
-call sp_add_or_del_medSpeciality('DEL',16,''); -- en este ejemplo el 16 es el que se agrega en la linea de arriba
+-- call sp_add_or_del_medSpeciality('INS',null,'Oncologo');
+-- call sp_add_or_del_medSpeciality('DEL',16,''); -- en este ejemplo el 16 es el que se agrega en la linea de arriba
