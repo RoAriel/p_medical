@@ -50,8 +50,15 @@ id INT AUTO_INCREMENT NOT NULL
 DROP TABLE IF EXISTS doctor;
 CREATE TABLE doctor(
 id INT AUTO_INCREMENT NOT NULL
+, dni INT NOT NULL
+, matricula varchar(15)
 , f_name VARCHAR(25) NOT NULL
 , l_name VARCHAR(25) NOT NULL
+, date_of_birth DATE NOT NULL
+, age INT NOT NULL
+, sex ENUM ('M','F') NOT NULL
+, phone VARCHAR(25) NOT NULL
+, email VARCHAR(50) 
 , PRIMARY KEY(`id`)
 );
 

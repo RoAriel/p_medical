@@ -1,24 +1,26 @@
 USE p_medical;
 
+SET FOREIGN_KEY_CHECKS=0;
+
 INSERT INTO PLAN (name,description) VALUES ('B1','Descuento en todo 10%');
 INSERT INTO PLAN (name,description) VALUES ('B2','Descuento en todo 20%');
 INSERT INTO PLAN (name,description) VALUES ('EM','Descuento en todo 40%');
 
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (1,22739776, 'Eduardo','Haro','1975-10-17','M',3,'Rio Segura 5','1577139025','eduardo_haro@gmail.com');
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (2,20868229, 'Paul','Centeno','1976-03-15','M',2,'Quevedo 79','1538972286','paul_centeno@gmail.com');
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (3,24114741, 'Maria Candelaria','Espinoza','1978-03-07','F',1,'Caminio Ancho 64','1528967013','candelaria_espinoza@gmail.com');
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (4,23263793, 'Iker','Bellido','1982-03-30','F',3,'Granada 1234','1555317488','iker_bellido@gmail.com');
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (5,28245441, 'Maria','Sanjuan','1984-12-02','M',2,'Cadiz 64','1588657255','maria_sanjuan@gmail.com');
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (6,21687525, 'Jorge','Freire','1985-01-07','M',3,'C/ Andalucia 62','1568105376','jorge_freire@gmail.com');
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (7,23615961, 'Julia','Benavente','1988-08-09','F',2,'Plazuela do Porto 53','1539864017','julia_benavente@gmail.com');
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (8,28930493, 'Francisco','Fernndez','1988-11-18','M',1,'Visitacion de la Encina 63','1539134259','francisco_fernndez@gmail.com');
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (9,24350619, 'Octavio','Galvez','1989-03-31','M',1,'Calle Proc. San Sebastian 60','1555147251','octavio_galvez@gmail.com');
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (10,21544467, 'Ana','Cerezo','1989-07-20','F',1,'Reyes Catolicos 30','1559226716','ana_cerezo@gmail.com');
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (11,24600991, 'Claudia','Galera','1992-09-27','F',3,'Boucinia 45','1502951937','claudia_galera@gmail.com');
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (12,24792215, 'Marian','Pardo','1994-06-12','F',1,'Avda. Generalisimo 61','1580988220','marian_pardo@gmail.com');
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (13,29593566, 'Saul','Climent','1995-02-15','M',3,'Antonio Vazquez 5','1554045950','saul_climent@gmail.com');
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (14,26595549, 'Amparo','Santana','1995-09-17','F',2,'Avda. Enrique Peinador 75','1586888030','amparo_santana@gmail.com');
-INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth,  sex,  plan_id,  address,  phone,  email) VALUES (15,29235535, 'Xabier','Baeza','2000-12-08','M',2,'Pl. Virgen Blanca 67','1558274483','xabier_baeza@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (1,22739776, 'Eduardo','Haro','1975-10-17',fn_getAge('1975-10-17'),'M',3,'Rio Segura 5','1577139025','eduardo_haro@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (2,20868229, 'Paul','Centeno','1976-03-15',fn_getAge('1976-03-15'),'M',2,'Quevedo 79','1538972286','paul_centeno@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (3,24114741, 'Maria Candelaria','Espinoza','1978-03-07',fn_getAge('1978-03-07'),'F',1,'Caminio Ancho 64','1528967013','candelaria_espinoza@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (4,23263793, 'Iker','Bellido','1982-03-30',fn_getAge('1982-03-30'),'F',3,'Granada 1234','1555317488','iker_bellido@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (5,28245441, 'Maria','Sanjuan','1984-12-02',fn_getAge('1984-12-02'),'M',2,'Cadiz 64','1588657255','maria_sanjuan@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (6,21687525, 'Jorge','Freire','1985-01-07',fn_getAge('1985-01-07'),'M',3,'C/ Andalucia 62','1568105376','jorge_freire@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (7,23615961, 'Julia','Benavente','1988-08-09',fn_getAge('1988-08-09'),'F',2,'Plazuela do Porto 53','1539864017','julia_benavente@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (8,28930493, 'Francisco','Fernndez','1988-11-18',fn_getAge('1988-11-18'),'M',1,'Visitacion de la Encina 63','1539134259','francisco_fernndez@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (9,24350619, 'Octavio','Galvez','1989-03-31',fn_getAge('1989-03-31'),'M',1,'Calle Proc. San Sebastian 60','1555147251','octavio_galvez@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (10,21544467, 'Ana','Cerezo','1989-07-20',fn_getAge('1989-07-20'),'F',1,'Reyes Catolicos 30','1559226716','ana_cerezo@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (11,24600991, 'Claudia','Galera','1992-09-27',fn_getAge('1992-09-27'),'F',3,'Boucinia 45','1502951937','claudia_galera@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (12,24792215, 'Marian','Pardo','1994-06-12',fn_getAge('1994-06-12'),'F',1,'Avda. Generalisimo 61','1580988220','marian_pardo@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (13,29593566, 'Saul','Climent','1995-02-15',fn_getAge('1995-02-15'),'M',3,'Antonio Vazquez 5','1554045950','saul_climent@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (14,26595549, 'Amparo','Santana','1995-09-17',fn_getAge('1995-09-17'),'F',2,'Avda. Enrique Peinador 75','1586888030','amparo_santana@gmail.com');
+INSERT INTO PARTNER (id, dni,  f_name,  l_name, date_of_birth, age,  sex,  plan_id,  address,  phone,  email)  VALUES (15,29235535, 'Xabier','Baeza','2000-12-08',fn_getAge('2000-12-08'),'M',2,'Pl. Virgen Blanca 67','1558274483','xabier_baeza@gmail.com');
 
 INSERT INTO medical_speciality values (1, 'Clinico');
 INSERT INTO medical_speciality values (2, 'Ginecologo');
@@ -40,16 +42,16 @@ INSERT INTO medical_history (id, partner_id, speciality_id, md_history) VALUES (
 INSERT INTO medical_history (id, partner_id, speciality_id, md_history) VALUES (2, 2,10,'n/a');
 INSERT INTO medical_history (id, partner_id, speciality_id, md_history) VALUES (3, 3,7,'n/a');
 
-INSERT INTO DOCTOR (id, f_name,  l_name) VALUES (1,'Josue','Rico');
-INSERT INTO DOCTOR (id, f_name,  l_name) VALUES (2,'Eduardo','Santos');
-INSERT INTO DOCTOR (id, f_name,  l_name) VALUES (3,'Antonio','Gago');
-INSERT INTO DOCTOR (id, f_name,  l_name) VALUES (4,'Iris','Lema');
-INSERT INTO DOCTOR (id, f_name,  l_name) VALUES (5,'Monica','Carranza');
-INSERT INTO DOCTOR (id, f_name,  l_name) VALUES (6,'Asuncion','Falcon');
-INSERT INTO DOCTOR (id, f_name,  l_name) VALUES (7,'Mariana','Uriarte');
-INSERT INTO DOCTOR (id, f_name,  l_name) VALUES (8,'Olatz','Vazquez');
-INSERT INTO DOCTOR (id, f_name,  l_name) VALUES (9,'Eduardo','Santos');
-INSERT INTO DOCTOR (id, f_name,  l_name) VALUES (10,'Olatz','Vazquez');
+INSERT INTO DOCTOR (id, dni, matricula, f_name, l_name, date_of_birth, age, sex, phone, email) VALUES (2,35660310,'MAT2699830','Eduardo','Santos','1990-11-12',fn_getAge('1990-11-12'),'M','1155040467','eduardo.santos@medical.com');
+INSERT INTO DOCTOR (id, dni, matricula, f_name, l_name, date_of_birth, age, sex, phone, email) VALUES (3,30310727,'MAT6898643','Antonio','Gago','1990-04-02',fn_getAge('1990-04-02'),'M','1126924632','antonio.gago@medical.com');
+INSERT INTO DOCTOR (id, dni, matricula, f_name, l_name, date_of_birth, age, sex, phone, email) VALUES (4,36486582,'MAT0688566','Iris','Lema','1987-06-06',fn_getAge('1987-06-06'),'F','1193021784','iris.lema@medical.com');
+INSERT INTO DOCTOR (id, dni, matricula, f_name, l_name, date_of_birth, age, sex, phone, email) VALUES (5,33976495,'MAT1771761','Monica','Carranza','1980-07-23',fn_getAge('1980-07-23'),'F','1120809478','monica.carranza@medical.com');
+INSERT INTO DOCTOR (id, dni, matricula, f_name, l_name, date_of_birth, age, sex, phone, email) VALUES (6,29264698,'MAT0156879','Asuncion','Falcon','1989-12-15',fn_getAge('1989-12-15'),'F','1188452915','asuncion.falcon@medical.com');
+INSERT INTO DOCTOR (id, dni, matricula, f_name, l_name, date_of_birth, age, sex, phone, email) VALUES (7,36895045,'MAT2849879','Mariana','Uriarte','1993-09-05',fn_getAge('1993-09-05'),'F','1117871178','mariana.uriarte@medical.com');
+INSERT INTO DOCTOR (id, dni, matricula, f_name, l_name, date_of_birth, age, sex, phone, email) VALUES (8,35522050,'MAT2692254','Olatz','Vazquez','1993-01-07',fn_getAge('1993-01-07'),'M','1198998880','olatz.vazquez@medical.com');
+INSERT INTO DOCTOR (id, dni, matricula, f_name, l_name, date_of_birth, age, sex, phone, email) VALUES (9,27172318,'MAT2318239','Eduardo','Santos','1979-12-31',fn_getAge('1979-12-31'),'M','1124292595','eduardo.santos@medical.com');
+INSERT INTO DOCTOR (id, dni, matricula, f_name, l_name, date_of_birth, age, sex, phone, email) VALUES (10,32483200,'MAT2848995','Marta','Vazquez','1985-04-23',fn_getAge('1985-04-23'),'F','1105035921','marta.vazquez@medical.com');
+
 
 INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (1,'Consultorio La Esmeralda', 'Zona Oeste', 'Ctra. de Fuentenueva 9','1529231373');
 INSERT INTO BRANCH (id, name,  location, address, phone) VALUES (2,'Consultorio Villa Espania', 'Zona Sur', 'Fuente del Gallo 68','1557340592');
