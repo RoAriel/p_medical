@@ -135,3 +135,9 @@ Las vistas son objetos dentro de nuesta base de datos que nos brindan informacio
 - vw_rel_speciality_branch: Especialidades por sucursal.
 - vw_rel_speciality_doc: Especialidades por doctor.
 - vw_shift_detail: Detalles de turnos.
+
+# Instalacion y puesta en marcha
+
+Para poder utilizar el modelo favor de seguir los pasos detallados [installation guide][guia].
+
+[guia]: https://github.com/RoAriel/p_medical/blob/main/installation%20guide.md
