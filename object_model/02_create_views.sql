@@ -30,18 +30,6 @@ inner join p_medical.branch br
 on br.id = sb.branch_id
 );
 
-CREATE OR REPLACE VIEW VW_northern_zone_branches AS
-(select * from branch where lower(location) = 'zona norte');
-
-CREATE OR REPLACE VIEW VW_eastern_zone_branches AS
-(select * from branch where lower(location) = 'zona este');
-
-CREATE OR REPLACE VIEW VW_south_zone_branches AS
-(select * from branch where lower(location) = 'zona sur');
-
-CREATE OR REPLACE VIEW VW_west_zone_branches AS
-(select * from branch where lower(location) = 'zona oeste');
-
 CREATE OR REPLACE VIEW vw_amount_per_sex AS (
 SELECT sex, count(*)as catidad
 from partner
