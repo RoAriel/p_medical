@@ -7,7 +7,7 @@ begin
 	if p_order = 'DESC' then
     set @qry = CONCAT('SELECT f_name, l_name from p_medical.partner order by ',p_column,' DESC;');
     else
-    set @qry = CONCAT('SELECT f_name, l_name from p_medical.partner order by ',p_column,' ASC');
+    set @qry = CONCAT('SELECT f_name, l_name from p_medical.partner order by ',p_column,' ASC;');
     END IF;
     
     PREPARE runSql FROM @qry;
@@ -17,8 +17,8 @@ begin
 end //
 DELIMITER ;
 
-call sp_order_partner_by('f_name', 'DESC');
-call sp_order_partner_by('f_name', 'ASC');
+-- call sp_order_partner_by('f_name', 'DESC');
+-- call sp_order_partner_by('f_name', 'ASC');
 
  DROP PROCEDURE IF EXISTS sp_add_or_del_medSpeciality;
  DELIMITER //
@@ -36,10 +36,11 @@ DELIMITER ;
 
  DROP PROCEDURE IF EXISTS sp_banch_per_zone;
  DELIMITER //
- create procedure sp_banch_per_zone (in the_zone VARCHAR(20))
+ create procedure sp_banch_per_zone (in p_zone VARCHAR(20))
 begin
-	
-     set @qry = CONCAT('SELECT name, location, address, phone from p_medical.branch where lower(location) = ', lower(the_zone));
+	 set @v_zone = concat('"',p_zone,'"');
+     
+     set @qry = CONCAT('SELECT name, location, address, phone from p_medical.branch where lower(location) like lower(', @v_zone, ');');
     -- set @qry = CONCAT('SELECT name, location, address, phone from p_medical.branch ;');
     PREPARE runSql FROM @qry;
     EXECUTE runSql;
@@ -48,7 +49,7 @@ begin
 end //
 DELIMITER ;
 
- -- call sp_banch_per_zone('Zona Norte')
+call sp_banch_per_zone('Zona Sur');
 
 -- call sp_add_or_del_medSpeciality('INS',null,'Oncologo');
 -- call sp_add_or_del_medSpeciality('DEL',16,''); -- en este ejemplo el 16 es el que se agrega en la linea de arriba
