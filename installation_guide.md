@@ -9,10 +9,10 @@ Todos los scripts.sql necesarios para crear el modelo son los que se encuentra d
 6. Creamos los usuarios y generamos sus permisos ejecutando el script [`06_create_users.sql`][6].
 7. Finalmente cargamos nuestras tablas con los datos ejecutnado el script [`07_populate_tables.sql`][7].
 
-8. [1]: https://github.com/RoAriel/p_medical/blob/main/object_model/01_create_tables.sql
-9. [2]: https://github.com/RoAriel/p_medical/blob/main/object_model/02_create_views.sql
-10. [3]: https://github.com/RoAriel/p_medical/blob/main/object_model/03_create_functions.sql
-11. [4]: https://github.com/RoAriel/p_medical/blob/main/object_model/04_create_stored_procedures.sql
-12. [5]: https://github.com/RoAriel/p_medical/blob/main/object_model/05_create_triggers.sql
-13. [6]: https://github.com/RoAriel/p_medical/blob/main/object_model/06_create_users.sql
-14. [7]: https://github.com/RoAriel/p_medical/blob/main/object_model/07_populate_tables.sql
+[1]: https://github.com/RoAriel/p_medical/blob/main/object_model/01_create_tables.sql
+[2]: https://github.com/RoAriel/p_medical/blob/main/object_model/02_create_views.sql
+[3]: https://github.com/RoAriel/p_medical/blob/main/object_model/03_create_functions.sql
+[4]: https://github.com/RoAriel/p_medical/blob/main/object_model/04_create_stored_procedures.sql
+[5]: https://github.com/RoAriel/p_medical/blob/main/object_model/05_create_triggers.sql
+[6]: https://github.com/RoAriel/p_medical/blob/main/object_model/06_create_users.sql
+[7]: https://github.com/RoAriel/p_medical/blob/main/object_model/07_populate_tables.sql
